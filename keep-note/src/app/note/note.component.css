@@ -7,7 +7,7 @@
 .container {
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgb(2, 11, 13);
-    margin: 30px 3%;
+    margin: 30px 0px 0px 25px;
     height: auto;
     width: 250px;
     padding: 1px 10px;
@@ -17,13 +17,16 @@ p {
     margin-top: 20px;
 }
 
-.title,
-.date {
+.title {
     margin-left: 20px;
+}
+.date{
+    margin-left: 20px;
+    color: rgb(160, 154, 154);
 }
 
 .category {
-    background-color: rgba(141, 141, 141, 0.968);
+    background-color: rgba(199, 199, 199, 0.968);
     padding: 3px 10px;
-    border-radius: 30%;
+    border-radius: 10px;
 }
