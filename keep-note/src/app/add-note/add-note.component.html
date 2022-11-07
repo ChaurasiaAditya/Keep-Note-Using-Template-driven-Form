@@ -1,5 +1,22 @@
 <div class="addnote">
-    <div>
+    <h3>New Note</h3>
+    <form (ngSubmit)="onSubmit()" #addkeep="ngForm">
+        <mat-form-field>
+            <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="note.title" required minlength="4" placeholder="NoteTitle" >
+            <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+                <div *ngIf="title.errors?.['required']">
+                    Title is Required
+                </div>
+                <div *ngIf="title.errors?.['minlength']">
+                    Title should be Minimum 4 characters
+                </div>
+            </div>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <textarea matInput name="content" id="content" cols="30" rows="2" required minlength="10" #content="ngModel" [(ngModel)]="note.content" placeholder="Note Content"></textarea>
+        </mat-form-field> -->
+    </form>
+    <!-- <div>
         <h3>Add New Note</h3>
         <div>
             <input type="text" [(ngModel)]="note.title" placeholder="Note Title">
@@ -8,5 +25,5 @@
             <textarea type="text" [(ngModel)]="note.content" rows="4" cols="45" placeholder="Note Content"></textarea>
         </div>
         <button (click)="addNote()">Save</button>
-    </div>
+    </div> -->
 </div>

@@ -13,7 +13,7 @@ export class NoteViewComponent implements OnInit {
   NOTE!: Note[];
   NOTES!: Note[];
 
-  aditya: boolean = false;
+  aditya: boolean = true;
   displayAdd() {
     if (this.aditya) {
       this.aditya = false;
