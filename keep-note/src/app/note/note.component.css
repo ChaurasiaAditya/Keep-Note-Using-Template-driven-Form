@@ -1,18 +1,29 @@
-.box{
+.box {
     display: inline-flex;
     justify-content: center;
     margin: 20px;
 }
-.container{
-    text-align: center;
+
+.container {
     border-radius: 5px;
-    box-shadow: 2px 2px 5px 5px rgb(173,216,230);
+    box-shadow: 1px 1px 5px rgb(2, 11, 13);
     margin: 30px 3%;
     height: auto;
-    width: 180px;
+    width: 250px;
     padding: 1px 10px;
 }
 
-p{
-    margin-top: 40px;
+p {
+    margin-top: 20px;
+}
+
+.title,
+.date {
+    margin-left: 20px;
+}
+
+.category {
+    background-color: rgba(141, 141, 141, 0.968);
+    padding: 3px 10px;
+    border-radius: 30%;
 }
