@@ -2,7 +2,8 @@
     <h3>New Note</h3>
     <form (ngSubmit)="onSubmit()" #addkeep="ngForm">
         <mat-form-field>
-            <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="note.title" required minlength="4" placeholder="NoteTitle" >
+            <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="note.title" required minlength="4"
+                placeholder="NoteTitle">
             <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
                 <div *ngIf="title.errors?.['required']">
                     Title is Required
@@ -14,7 +15,8 @@
         </mat-form-field><br>
 
         <mat-form-field>
-            <textarea matInput name="content" id="content" cols="30" rows="2" required minlength="10" #content="ngModel" [(ngModel)]="note.content" placeholder="Note Content" ></textarea>
+            <textarea matInput name="content" id="content" cols="30" rows="2" required minlength="10" #content="ngModel"
+                [(ngModel)]="note.content" placeholder="Note Content"></textarea>
             <div *ngIf="content?.invalid && (content?.dirty || content?.touched)">
                 <div *ngIf="content.errors?.['required']">
                     Content is Required
@@ -25,9 +27,40 @@
             </div>
         </mat-form-field><br>
 
+        <!-- <mat-form-field >
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> -->
+
         <mat-form-field>
-            
-        </mat-form-field>
+            <mat-select name="category" #categoty="ngModel" [(ngModel)]="note.category" required
+                placeholder="Add Category">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+
+        Priority
+        <mat-radio-group name="priority" #priority="ngModel" [(ngModel)]="note.priority" required>
+            <mat-radio-button value="low">Low</mat-radio-button>
+            <mat-radio-button value="Medium">Medium</mat-radio-button>
+            <mat-radio-button value="High">High</mat-radio-button>
+            <mat-radio-button value="Critical">Critical</mat-radio-button>
+            <div *ngIf="priority?.invalid && (priority?.dirty || priority?.touched)">
+                <div *ngIf="priority.errors?.['required']">
+                    Priority is Required
+                </div>
+            </div>
+        </mat-radio-group><br><br>
+
+
+        <button mat-fab color="primary" type="submit" [disabled]="addkeep.invalid">
+            <mat-icon>save</mat-icon>
+        </button>
     </form>
     <!-- <div>
         <h3>Add New Note</h3>

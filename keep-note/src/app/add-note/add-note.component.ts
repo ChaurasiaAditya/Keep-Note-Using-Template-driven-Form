@@ -14,8 +14,9 @@ export class AddNoteComponent implements OnInit {
 
   note:Note = {}
 
+  categories:string[] = ["office","Review"]
   onSubmit(){
-    
+
   }
   addNote(){
     this.noteservice.addNote(this.note).subscribe({ next(x) { alert("Note Added") }, error() { alert("Failed to Add Note") } })
