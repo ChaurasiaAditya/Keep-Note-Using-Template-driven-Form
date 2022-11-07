@@ -1,0 +1,14 @@
+
+<app-search (searchTextChanged)="search($event)"></app-search>
+<div *ngIf="aditya"><app-add-note></app-add-note></div>
+
+
+<app-note *ngFor="let notes of NOTE" [note]="notes"></app-note>
+
+
+
+<div class="button">              
+    <button (click)="displayAdd()" mat-fab color="primary">
+        <mat-icon >add</mat-icon>
+    </button>
+</div>

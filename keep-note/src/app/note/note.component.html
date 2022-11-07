@@ -1,0 +1,13 @@
+<!-- <p>note works!</p> -->
+<div class="box" (mouseenter)="showIcons()" (mouseleave)="hideIcons()">
+    <div class="container">
+        <h3> {{note.title}} </h3>
+        <p> {{note.content}} </p>
+        <div *ngIf="icons" class="icon">
+            <mat-icon color="primary">bookmark</mat-icon>
+            <mat-icon color="primary">edit</mat-icon>
+            <mat-icon color="primary">delete</mat-icon>
+            <mat-icon color="white">notifications</mat-icon>
+        </div>
+    </div>
+</div>
