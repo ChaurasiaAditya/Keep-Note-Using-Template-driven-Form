@@ -1,5 +1,5 @@
 .search {
-    margin: 0px 40%;
+    margin: 50px 35%;
     width: 400px;
 }
 
@@ -8,10 +8,9 @@
 }
 
 .icon {
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 mat-form-field {
-    width: 400px;
-
+    width: 480px;
 }

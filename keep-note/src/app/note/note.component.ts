@@ -9,17 +9,6 @@ export class NoteComponent implements OnInit {
 
   @Input()
   note:any;
-
-
-  icons:boolean = false;
-  showIcons(){
-      this.icons= true;
-  
-  }
-
-  hideIcons(){
-    this.icons=false;
-  }
   
   constructor() { }
 
