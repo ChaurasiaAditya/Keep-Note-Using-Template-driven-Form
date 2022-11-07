@@ -1,6 +1,6 @@
 <div class="addnote">
     <h3>New Note</h3>
-    <form (ngSubmit)="onSubmit()" #addkeep="ngForm">
+    <form (ngSubmit)="addNote()" #addkeep="ngForm">
         <mat-form-field>
             <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="note.title" required minlength="4"
                 placeholder="NoteTitle">
@@ -36,12 +36,17 @@
           </mat-form-field> -->
 
         <mat-form-field>
-            <mat-select name="category" #categoty="ngModel" [(ngModel)]="note.category" required
+            <mat-select name="category" #category="ngModel" [(ngModel)]="note.category" required
                 placeholder="Add Category">
                 <mat-option *ngFor="let category of categories" [value]="category">
                     {{category}}
                 </mat-option>
             </mat-select>
+            <div *ngIf="category?.invalid && (category?.dirty ||category.touched) ">
+                <div *ngIf="category.errors?.['required']">
+                    Category is required
+                </div>
+            </div>
         </mat-form-field><br>
 
         Priority
@@ -62,14 +67,4 @@
             <mat-icon>save</mat-icon>
         </button>
     </form>
-    <!-- <div>
-        <h3>Add New Note</h3>
-        <div>
-            <input type="text" [(ngModel)]="note.title" placeholder="Note Title">
-        </div>
-        <div>
-            <textarea type="text" [(ngModel)]="note.content" rows="4" cols="45" placeholder="Note Content"></textarea>
-        </div>
-        <button (click)="addNote()">Save</button>
-    </div> -->
 </div>
