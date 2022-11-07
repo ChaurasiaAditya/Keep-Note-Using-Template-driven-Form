@@ -11,10 +11,21 @@
                     Title should be Minimum 4 characters
                 </div>
             </div>
-        </mat-form-field>
-        <!-- <mat-form-field>
-            <textarea matInput name="content" id="content" cols="30" rows="2" required minlength="10" #content="ngModel" [(ngModel)]="note.content" placeholder="Note Content"></textarea>
-        </mat-form-field> -->
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <textarea matInput name="content" id="content" cols="30" rows="2" required minlength="10" #content="ngModel" [(ngModel)]="note.content" placeholder="Note Content" ></textarea>
+            <div *ngIf="content?.invalid && (content?.dirty || content?.touched)">
+                <div *ngIf="content.errors?.['required']">
+                    Content is Required
+                </div>
+                <div *ngIf="content.errors?.['minlength']">
+                    Content must be more than 10 characters
+                </div>
+            </div>
+        </mat-form-field><br>
+
+        
     </form>
     <!-- <div>
         <h3>Add New Note</h3>
