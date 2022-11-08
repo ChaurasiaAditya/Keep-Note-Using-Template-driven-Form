@@ -10,7 +10,7 @@
             </h2>
         </div>
         <div class="date">
-            <p>{{note.reminderDate}}</p>
+            <p>{{note.reminderDate | date: 'YYYY/MM/dd hh:mm aaa'}}</p>
         </div>
         <div class="content">
             <p> {{note.content}} </p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from 'src/models/note';
 import { NoteService } from '../note.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-note',
@@ -16,13 +17,18 @@ export class AddNoteComponent implements OnInit {
   categories:string[] = ["office","Review"]
   
   addNote(){
-    this.noteservice.addNote(this.note).subscribe({ next(x) { alert("Note Added") }, error() { alert("Failed to Add Note") } })
+    this.noteservice.addNote(this.note).subscribe(
+      {next:() => this._snackBar.open('Note Added successfully', 'dismis', {​
+        duration: 5000,​
+        panelClass: ['mat-toolbar', 'mat-primary']​
+        })}
+    )
   }
   
   
 
 
-  constructor(private noteservice:NoteService) { }
+  constructor(private noteservice:NoteService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.noteservice.getNotes().subscribe(data => this.NOTE = data)

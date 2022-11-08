@@ -3,6 +3,6 @@ export type Note = {
     title?: string;
     content?: string;
     category?: string;
-    reminderDate?: string;
+    reminderDate?: Date;
     priority?: string;
 }
