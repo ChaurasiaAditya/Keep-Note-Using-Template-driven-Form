@@ -14,6 +14,7 @@ export class AddNoteComponent implements OnInit {
 
   note:Note = {}
 
+  panelOpenState:boolean = false;
   categories:string[] = ["office","Review"]
   
   addNote(){
@@ -25,9 +26,6 @@ export class AddNoteComponent implements OnInit {
     )
   }
   
-  
-
-
   constructor(private noteservice:NoteService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {

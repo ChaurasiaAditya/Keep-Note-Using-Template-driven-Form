@@ -1,6 +1,11 @@
-<div class="addnote">
-    <h3>New Note</h3>
-    <form (ngSubmit)="addNote()" #addkeep="ngForm">
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="addnote">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Add Note
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        
+    <form (ngSubmit)="addNote()" #addkeep="ngForm" >
         <mat-form-field>
             <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="note.title" required minlength="4"
                 placeholder="NoteTitle">
@@ -74,4 +79,5 @@
             <mat-icon>save</mat-icon>
         </button>
     </form>
-</div>
+</mat-expansion-panel>
+<!-- </div> -->
